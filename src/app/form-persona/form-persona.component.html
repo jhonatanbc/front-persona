@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Personas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    @if (formGroup) {
+        <form [formGroup]="formGroup" (submit)="onSubmit(); formGroup.reset()">
+          <h2>
+            @if (persona) {
+                Actualizar Persona
+            }@else {
+                Registro de personas
+            }
+        </h2>
+          <div class="row">
+            <input type="hidden">
+            <div class="cols-sm-4">
+              <div class="form-group">
+                <label for="nombres" class="col-form-label">Nombres</label>
+                <input type="text" formControlName="nombres" class="form-control" id="nombres" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cols-sm-4">
+              <div class="form-group">
+                <label for="apellidoPaterno" class="col-form-label">Apellido Paterno</label>
+                <input type="text" formControlName="apellidoPaterno" class="form-control" id="apellidoPaterno" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cols-sm-4">
+              <div class="form-group">
+                <label for="apellidoMaterno" class="col-form-label">Apellido Materno</label>
+                <input type="text" formControlName="apellidoMaterno" class="form-control" id="apellidoMaterno" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cols-sm-4">
+              <div class="form-group">
+                <label for="edad" class="col-form-label">Edad</label>
+                <input type="number" formControlName="edad" class="form-control" id="edad" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5 text-right">
+              <div class="form-group box-main-btn">
+                <span style="display: block; height: 30px"></span>
+                <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">
+                    @if (persona) {
+                        Actualizar
+                    }@else {
+                        Grabar
+                    }
+                </button>
+                <a class="btn btn-secondary" href="/persona">Cancelar</a>
+              </div>
+            </div>
+          </div>
+        </form>
+    }
+</div>
+</body>
+</html>
+

@@ -3,6 +3,12 @@ export interface PersonaResponse{
     nombres:String,
     apellidoPaterno:String,
     apellidoMaterno:String,
-    edad : String
-    
+    edad : String    
 }
+export interface PersonaSave{
+    nombres:String,
+    apellidoPaterno:String,
+    apellidoMaterno:String,
+    edad : String    
+}
+
